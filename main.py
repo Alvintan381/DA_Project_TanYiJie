@@ -52,7 +52,7 @@ def sortCountry(df):
 	sea_region = df.iloc[216:348, 2:9]
 	df1 = df.iloc[216:347, 0:2]
 	result = df1.join(sea_region)
-	print("Total number of countries:", str(len(result.columns) - 2) + "\n")
+	print("Total number of the countries:", str(len(result.columns) - 2) + "\n")
 	print(result)
 
 	#Display the top 3 countries that visited Singapore over the span of 10 years
@@ -85,21 +85,23 @@ if __name__ == '__main__':
 
 import matplotlib.pyplot as pit
 
-activities = ['Indonesia', 'Malaysia', 'Philippines']
-slices = [25610369, 10691646, 6129847]
-colours = ['#5DADE2', '#9B59B6', '#F4D03F']
+activities = ['Indonesia', 'Malaysia', 'Thailand', 'Philippines', 'Viet Nam', 'Brunei Darussalam', 'Myanmar'  ]
+slices = [15288142, 6292852, 2961107, 2323026, 667954, 601772, 267938]
+colours = ['#5DADE2', '#9B59B6', '#F4D03F', '#F39C12', '#ECF0F1', '#C0392B', '#566573' ]
 
+#Pie chart
 pit.pie(slices,
         labels=activities,
         startangle=90,
         shadow=True,
         colors=colours,
-        explode=(0.2, 0, 0),
+        explode=(0.3, 0, 0, 0, 0, 0, 0),
         autopct='%1.2f%%')
 
-
+#Show legend
 pit.legend()
 
+#Show pie chart
 pit.show()
 
 #########################################################################
